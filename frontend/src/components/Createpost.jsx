@@ -8,10 +8,10 @@ function Createpost() {
   return (
     <div className=" ">
       <div className="flex justify-around border-b ">
-        <div className=" w-full text-lg py-2 hover:bg-gray-200 text-center ">
+        <div className=" w-full text-lg py-3 hover:bg-gray-200 text-center ">
           For You
         </div>
-        <div className=" w-full text-lg py-2 hover:bg-gray-200 text-center">
+        <div className=" w-full text-lg py-3 hover:bg-gray-200 text-center">
           Following
         </div>
       </div>
@@ -25,7 +25,7 @@ function Createpost() {
               round={true}
             />
           </div>
-          <textarea  className="text-2xl   outline-none w-full resize-none" placeholder="What is happening ?"></textarea>
+          <textarea  className="text-2xl pl-2  outline-none w-full resize-none" placeholder="What is happening ?"></textarea>
         </div>
         <div className="m-3   flex justify-between  ">
           <CiImageOn className="h-10 w-6 ml-5" />

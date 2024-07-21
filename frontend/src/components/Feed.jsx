@@ -4,7 +4,7 @@ import Tweet from './Tweet'
 
 function Feed() {
   return (
-    <div className='w-[60%] border-l '> 
+    <div className='w-[50%] '> 
     <Createpost/>
    <Tweet/>
   
