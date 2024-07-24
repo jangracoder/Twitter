@@ -1,7 +1,7 @@
-import { User } from "../models/userSchema";
+import { User } from "../models/userSchema.js";
 import bcrypt from "bcryptjs"
 
-export const Register= async ()=>{
+export const Register= async (req,res)=>{
     try{
         const {name,username,email,password}=req.body;
         if(!name || !username || !email || !password){
@@ -10,23 +10,20 @@ export const Register= async ()=>{
                     success:false
             })
         }
-
         
-
-
-        const user = await User.findOne(email);
+        const user = await User.findOne({email});
         if(user){
             return res.status(401).json({
-                message:"User alreadt exists",
+                message:"User already exists",
                 status:false
             })
         }
         const hashedPassword = await bcrypt.hash(password,16);
-        await user.create({
+        await User.create({
             name,
             username,
             email,
-            hashedPassword
+            password:hashedPassword
         })
 
         return res.status(201).json({
@@ -41,3 +38,4 @@ export const Register= async ()=>{
    }
 
 }
+
